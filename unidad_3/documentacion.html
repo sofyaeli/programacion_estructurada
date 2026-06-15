@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diccionario de Etiquetas HTML</title>
+    <link rel="icon" type="image/x-icon" href="helmet_2823525.png" />
+
+    <style>
+      :root {
+        --primary-blue: #00d4ff;
+        --secondary-blue: #00b4d8;
+        --accent-orange: #ff9f1c;
+        --bg-dark: #1e1e26;
+        --card-bg: #2a2a35;
+        --text-gray: #b0b0b0;
+        --border-color: #3d3d4d;
+      }
+
+      body {
+        background-color: var(--bg-dark);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 40px 20px;
+        color: #e0e0e0;
+      }
+
+      .main-container {
+        background-color: var(--card-bg);
+        padding: 40px;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 900px;
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+        border: 1px solid #333;
+      }
+
+      /* Navegación superior */
+      .nav-buttons {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 30px;
+      }
+
+      .btn-nav {
+        text-decoration: none;
+        color: #a0a0a0;
+        background: #23232e;
+        padding: 10px 18px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        border: 1px solid var(--border-color);
+        transition: 0.3s;
+      }
+
+      .btn-nav:hover {
+        color: var(--primary-blue);
+        border-color: var(--primary-blue);
+        transform: translateY(-2px);
+      }
+
+      h1 {
+        color: var(--primary-blue);
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 2px;
+        border-bottom: 2px solid var(--primary-blue);
+        padding-bottom: 15px;
+        margin-bottom: 35px;
+      }
+
+      /* Estilo de la Tabla */
+      .table-container {
+        overflow-x: auto; /* Para que sea responsive en móviles */
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+      }
+
+      th {
+        background-color: #1a1a21;
+        color: var(--accent-orange);
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        padding: 15px;
+        text-align: left;
+        border-bottom: 2px solid var(--border-color);
+      }
+
+      td {
+        padding: 15px;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-gray);
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      /* Resaltado de etiquetas */
+      .tag-name {
+        font-family: "Courier New", Courier, monospace;
+        color: var(--primary-blue);
+        font-weight: bold;
+        background: rgba(0, 212, 255, 0.1);
+        padding: 4px 8px;
+        border-radius: 4px;
+      }
+
+      tr:hover {
+        background-color: rgba(255, 255, 255, 0.03);
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      .highlight {
+        color: var(--accent-orange);
+      }
+      pre {
+        background-color: #1e1e26;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #00d4ff;
+        font-family: "Consolas", monospace;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <nav class="nav-buttons">
+        <a href="../../index.html" class="btn-nav">🏠 Inicio</a>
+        <a href="unidad_3.html" class="btn-nav">📚 Mis Deberes</a>
+      </nav>
+      <h1>Unidad 3: Programación Orientada a Objetos en C#</h1>
+
+      <h2>Objetivo</h2>
+      <p>
+        Comprender los fundamentos de la Programación Orientada a Objetos (POO)
+        en C#, incluyendo la creación de clases y objetos, el uso de propiedades
+        y métodos, así como los principios de herencia, polimorfismo,
+        encapsulamiento e interfaces. Estos conceptos permiten desarrollar
+        aplicaciones más organizadas, reutilizables y fáciles de mantener.
+      </p>
+
+      <h2>Introducción</h2>
+
+      <p>
+        La Programación Orientada a Objetos (POO) es un paradigma de
+        programación basado en la creación de objetos que representan entidades
+        del mundo real. Cada objeto posee características (atributos) y
+        comportamientos (métodos), permitiendo modelar problemas de manera más
+        intuitiva y eficiente.
+      </p>
+
+      <h2>3.1 Clases y Objetos</h2>
+
+      <p>
+        Una <span class="highlight">clase</span> es una plantilla o modelo que
+        define las características y comportamientos que tendrán los objetos.
+      </p>
+
+      <p>
+        Un <span class="highlight">objeto</span> es una instancia de una clase,
+        es decir, una representación concreta creada a partir de dicha
+        plantilla.
+      </p>
+
+      <h3 class="highlight">Ejemplo de Clase</h3>
+
+      <pre>
+class Persona
+{
+    public string Nombre;
+    public int Edad;
+}
+</pre
+      >
+
+      <h3 class="highlight">Creación de Objetos</h3>
+
+      <pre>
+Persona persona1 = new Persona();
+
+persona1.Nombre = "Juan";
+persona1.Edad = 20;
+</pre
+      >
+
+      <p>
+        En este ejemplo, <strong>Persona</strong> es la clase y
+        <strong>persona1</strong> es un objeto creado a partir de ella.
+      </p>
+
+      <h2>Ventajas de Utilizar Clases y Objetos</h2>
+
+      <ul>
+        <li>Permiten organizar mejor el código.</li>
+        <li>Facilitan la reutilización de componentes.</li>
+        <li>Representan entidades del mundo real.</li>
+        <li>Mejoran el mantenimiento de las aplicaciones.</li>
+      </ul>
+
+      <h2>3.2 Propiedades y Métodos</h2>
+
+      <p>
+        Las <span class="highlight">propiedades</span> permiten almacenar y
+        gestionar información dentro de una clase.
+      </p>
+
+      <p>
+        Los <span class="highlight">métodos</span> representan acciones o tareas
+        que un objeto puede realizar.
+      </p>
+
+      <h3 class="highlight">Ejemplo</h3>
+
+      <pre>
+class Persona
+{
+    public string Nombre { get; set; }
+
+    public void Saludar()
+    {
+        Console.WriteLine("Hola, soy " + Nombre);
+    }
+}
+</pre
+      >
+
+      <p>
+        La propiedad <strong>Nombre</strong> almacena información del objeto,
+        mientras que el método <strong>Saludar()</strong> define un
+        comportamiento.
+      </p>
+
+      <h3 class="highlight">Uso del Método</h3>
+
+      <pre>
+Persona persona1 = new Persona();
+
+persona1.Nombre = "Ana";
+persona1.Saludar();
+</pre
+      >
+
+      <h2>3.3 Herencia, Polimorfismo y Encapsulamiento</h2>
+
+      <h3 class="highlight">Encapsulamiento</h3>
+
+      <p>
+        El encapsulamiento consiste en proteger los datos de una clase y
+        controlar su acceso mediante propiedades y métodos.
+      </p>
+
+      <pre>
+class Cuenta
+{
+    private double saldo;
+
+    public void Depositar(double monto)
+    {
+        saldo += monto;
+    }
+}
+</pre
+      >
+
+      <p>
+        La variable <strong>saldo</strong> es privada y únicamente puede
+        modificarse mediante métodos autorizados.
+      </p>
+
+      <h3 class="highlight">Herencia</h3>
+
+      <p>
+        La herencia permite crear nuevas clases basadas en clases existentes,
+        reutilizando atributos y métodos.
+      </p>
+
+      <pre>
+class Animal
+{
+    public void Comer()
+    {
+        Console.WriteLine("El animal está comiendo");
+    }
+}
+
+class Perro : Animal
+{
+}
+</pre
+      >
+
+      <p>
+        La clase <strong>Perro</strong> hereda el método
+        <strong>Comer()</strong> de la clase <strong>Animal</strong>.
+      </p>
+
+      <h3 class="highlight">Polimorfismo</h3>
+
+      <p>
+        El polimorfismo permite que un mismo método tenga comportamientos
+        diferentes dependiendo del objeto que lo utilice.
+      </p>
+
+      <pre>
+class Animal
+{
+    public virtual void Sonido()
+    {
+        Console.WriteLine("Sonido genérico");
+    }
+}
+
+class Perro : Animal
+{
+    public override void Sonido()
+    {
+        Console.WriteLine("Guau Guau");
+    }
+}
+</pre
+      >
+
+      <p>
+        Aunque ambos utilizan el método <strong>Sonido()</strong>, cada clase
+        genera un comportamiento distinto.
+      </p>
+
+      <h2>Beneficios de la Herencia, Encapsulamiento y Polimorfismo</h2>
+
+      <ul>
+        <li>Favorecen la reutilización de código.</li>
+        <li>Mejoran la seguridad de los datos.</li>
+        <li>Facilitan el mantenimiento del software.</li>
+        <li>Permiten desarrollar sistemas escalables.</li>
+      </ul>
+
+      <h2>3.4 Interfaces</h2>
+
+      <p>
+        Una interfaz define un conjunto de métodos que una clase debe
+        implementar. Actúa como un contrato que garantiza ciertas
+        funcionalidades.
+      </p>
+
+      <h3 class="highlight">Definición de una Interfaz</h3>
+
+      <pre>
+interface IVehiculo
+{
+    void Arrancar();
+}
+</pre
+      >
+
+      <h3 class="highlight">Implementación</h3>
+
+      <pre>
+class Auto : IVehiculo
+{
+    public void Arrancar()
+    {
+        Console.WriteLine("El auto ha arrancado");
+    }
+}
+</pre
+      >
+
+      <p>
+        La clase <strong>Auto</strong> está obligada a implementar el método
+        <strong>Arrancar()</strong> definido en la interfaz.
+      </p>
+
+      <h2>Ventajas de las Interfaces</h2>
+
+      <ul>
+        <li>Promueven la flexibilidad del diseño.</li>
+        <li>Favorecen el desacoplamiento entre clases.</li>
+        <li>Facilitan el mantenimiento y las pruebas.</li>
+        <li>Permiten implementar múltiples comportamientos.</li>
+      </ul>
+
+      <h2>Aplicaciones Prácticas</h2>
+
+      <ul>
+        <li>Sistemas de gestión empresarial.</li>
+        <li>Aplicaciones bancarias.</li>
+        <li>Videojuegos.</li>
+        <li>Sistemas educativos.</li>
+        <li>Aplicaciones móviles y web.</li>
+      </ul>
+
+      <h2>Conclusiones</h2>
+
+      <div class="conclusiones-lista">
+        <ul>
+          <li>
+            Las clases y objetos constituyen la base de la Programación
+            Orientada a Objetos.
+          </li>
+          <li>
+            Las propiedades y métodos permiten definir características y
+            comportamientos de los objetos.
+          </li>
+          <li>
+            El encapsulamiento protege los datos y mejora la seguridad del
+            software.
+          </li>
+          <li>
+            La herencia favorece la reutilización de código y la creación de
+            jerarquías de clases.
+          </li>
+          <li>
+            El polimorfismo permite adaptar comportamientos según el contexto.
+          </li>
+          <li>
+            Las interfaces facilitan el diseño de aplicaciones flexibles y
+            escalables.
+          </li>
+          <li>
+            La Programación Orientada a Objetos es uno de los pilares
+            fundamentales para el desarrollo profesional de software moderno.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

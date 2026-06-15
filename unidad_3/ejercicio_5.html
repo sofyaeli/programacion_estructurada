@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diccionario de Etiquetas HTML</title>
+    <link rel="icon" type="image/x-icon" href="helmet_2823525.png" />
+
+    <style>
+      :root {
+        --primary-blue: #00d4ff;
+        --secondary-blue: #00b4d8;
+        --accent-orange: #ff9f1c;
+        --bg-dark: #1e1e26;
+        --card-bg: #2a2a35;
+        --text-gray: #b0b0b0;
+        --border-color: #3d3d4d;
+      }
+
+      body {
+        background-color: var(--bg-dark);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 40px 20px;
+        color: #e0e0e0;
+      }
+
+      .main-container {
+        background-color: var(--card-bg);
+        padding: 40px;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 900px;
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+        border: 1px solid #333;
+      }
+
+      /* Navegación superior */
+      .nav-buttons {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 30px;
+      }
+
+      .btn-nav {
+        text-decoration: none;
+        color: #a0a0a0;
+        background: #23232e;
+        padding: 10px 18px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        border: 1px solid var(--border-color);
+        transition: 0.3s;
+      }
+
+      .btn-nav:hover {
+        color: var(--primary-blue);
+        border-color: var(--primary-blue);
+        transform: translateY(-2px);
+      }
+
+      h1 {
+        color: var(--primary-blue);
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 2px;
+        border-bottom: 2px solid var(--primary-blue);
+        padding-bottom: 15px;
+        margin-bottom: 35px;
+      }
+
+      /* Estilo de la Tabla */
+      .table-container {
+        overflow-x: auto; /* Para que sea responsive en móviles */
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+      }
+
+      th {
+        background-color: #1a1a21;
+        color: var(--accent-orange);
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        padding: 15px;
+        text-align: left;
+        border-bottom: 2px solid var(--border-color);
+      }
+
+      td {
+        padding: 15px;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-gray);
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      /* Resaltado de etiquetas */
+      .tag-name {
+        font-family: "Courier New", Courier, monospace;
+        color: var(--primary-blue);
+        font-weight: bold;
+        background: rgba(0, 212, 255, 0.1);
+        padding: 4px 8px;
+        border-radius: 4px;
+      }
+
+      tr:hover {
+        background-color: rgba(255, 255, 255, 0.03);
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      .highlight {
+        color: var(--accent-orange);
+      }
+      pre {
+        background-color: #1e1e26;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #00d4ff;
+        font-family: "Consolas", monospace;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <nav class="nav-buttons">
+        <a href="../../index.html" class="btn-nav">🏠 Inicio</a>
+        <a href="unidad_3.html" class="btn-nav">📚 Mis Deberes</a>
+      </nav>
+      <h1>Trabajo Autónomo No. 05</h1>
+
+<h2>Objetivos</h2>
+<p>
+    Desarrollar una aplicación en C# que permita realizar operaciones con
+    números complejos mediante la implementación de clases y métodos propios de
+    la Programación Orientada a Objetos. A través de esta actividad se busca
+    comprender la creación de clases, la interacción entre objetos y la
+    implementación de operaciones matemáticas como suma, resta,
+    multiplicación, división y conversiones entre forma binomial y polar.
+    Además, se fomenta el compromiso ético en el desarrollo de soluciones
+    informáticas confiables y estructuradas.
+</p>
+
+<h2>Descripción del Problema</h2>
+
+<p>
+    Se requiere desarrollar un programa para operar con números complejos.
+    El sistema estará conformado por tres clases:
+</p>
+
+<ul>
+    <li>
+        <span class="highlight">Clase Principal:</span>
+        contiene el método Main.
+    </li>
+    <li>
+        <span class="highlight">Clase NumeroComplejo:</span>
+        representa un número complejo.
+    </li>
+    <li>
+        <span class="highlight">Clase AritmeticaCompleja:</span>
+        contiene los métodos para realizar operaciones entre números complejos.
+    </li>
+</ul>
+
+<p>
+    El programa deberá realizar las siguientes operaciones:
+</p>
+
+<ul>
+    <li>Suma de números complejos.</li>
+    <li>Resta de números complejos.</li>
+    <li>Multiplicación de números complejos.</li>
+    <li>División de números complejos.</li>
+    <li>Conversión de forma binomial a polar.</li>
+    <li>Conversión de forma polar a binomial.</li>
+</ul>
+
+<h2>Fundamento Teórico</h2>
+
+<p>
+    Un número complejo está formado por una parte real y una parte imaginaria:
+</p>
+
+<pre>
+z = a + bi
+</pre>
+
+<p>
+    Donde:
+</p>
+
+<ul>
+    <li>a = parte real</li>
+    <li>b = parte imaginaria</li>
+    <li>i = √(-1)</li>
+</ul>
+
+<p>
+    Los números complejos pueden expresarse en:
+</p>
+
+<ul>
+    <li>
+        <span class="highlight">Forma Binomial:</span>
+        a + bi
+    </li>
+    <li>
+        <span class="highlight">Forma Polar:</span>
+        r(cos θ + i sen θ)
+    </li>
+</ul>
+
+<h2>Diseño de Clases</h2>
+
+<h3 class="highlight">Clase NumeroComplejo</h3>
+
+<pre>
+class NumeroComplejo
+{
+    public double Real { get; set; }
+    public double Imaginario { get; set; }
+
+    public NumeroComplejo(
+        double real,
+        double imaginario)
+    {
+        Real = real;
+        Imaginario = imaginario;
+    }
+}
+</pre>
+
+<h3 class="highlight">Clase AritmeticaCompleja</h3>
+
+<pre>
+class AritmeticaCompleja
+{
+    public NumeroComplejo Sumar(
+        NumeroComplejo a,
+        NumeroComplejo b)
+    {
+        return new NumeroComplejo(
+            a.Real + b.Real,
+            a.Imaginario + b.Imaginario);
+    }
+}
+</pre>
+
+<h2>Algoritmo</h2>
+
+<ul>
+    <li>Inicio.</li>
+    <li>Crear objetos de tipo NumeroComplejo.</li>
+    <li>Ingresar la parte real e imaginaria.</li>
+    <li>Seleccionar la operación deseada.</li>
+    <li>Ejecutar el método correspondiente.</li>
+    <li>Mostrar el resultado obtenido.</li>
+    <li>Fin.</li>
+</ul>
+
+<h2>Código Principal</h2>
+
+<pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        NumeroComplejo n1 =
+            new NumeroComplejo(4, 3);
+
+        NumeroComplejo n2 =
+            new NumeroComplejo(2, 1);
+
+        AritmeticaCompleja op =
+            new AritmeticaCompleja();
+
+        NumeroComplejo resultado =
+            op.Sumar(n1, n2);
+
+        Console.WriteLine(
+            resultado.Real + " + " +
+            resultado.Imaginario + "i");
+    }
+}
+</pre>
+
+<h2>Ejemplo de Ejecución</h2>
+
+<ul>
+    <li>Primer complejo: 4 + 3i</li>
+    <li>Segundo complejo: 2 + 1i</li>
+    <li>Operación: Suma</li>
+    <li>
+        <span class="highlight">Resultado:</span>
+        6 + 4i
+    </li>
+</ul>
+
+<h2>Conversión de Forma Binomial a Polar</h2>
+
+<p>
+    Para convertir un número complejo de forma binomial a polar se utilizan las
+    siguientes expresiones:
+</p>
+
+<pre>
+r = √(a² + b²)
+
+θ = atan(b / a)
+</pre>
+
+<p>
+    Donde:
+</p>
+
+<ul>
+    <li>r = módulo</li>
+    <li>θ = argumento</li>
+</ul>
+
+<h2>Conversión de Forma Polar a Binomial</h2>
+
+<pre>
+a = r cos(θ)
+
+b = r sen(θ)
+</pre>
+
+<p>
+    Estas fórmulas permiten obtener nuevamente la parte real e imaginaria del
+    número complejo.
+</p>
+
+<h2>Conceptos Aplicados</h2>
+
+<ul>
+    <li>Clases y objetos.</li>
+    <li>Constructores.</li>
+    <li>Propiedades.</li>
+    <li>Métodos.</li>
+    <li>Instanciación de objetos.</li>
+    <li>Operaciones con números complejos.</li>
+    <li>Programación Orientada a Objetos.</li>
+</ul>
+
+<h2>Análisis de Resultados</h2>
+
+<p>
+    La implementación mediante clases permite organizar el código de forma más
+    eficiente y reutilizable. Cada objeto representa un número complejo y las
+    operaciones matemáticas se encapsulan dentro de métodos específicos,
+    facilitando el mantenimiento y escalabilidad de la aplicación.
+</p>
+
+<h2>Conclusiones</h2>
+
+<div class="conclusiones-lista">
+    <ul>
+        <li>
+            Se comprendió cómo modelar entidades matemáticas utilizando clases
+            y objetos en C#.
+        </li>
+        <li>
+            Se aplicaron principios fundamentales de Programación Orientada a
+            Objetos para resolver un problema práctico.
+        </li>
+        <li>
+            Las operaciones con números complejos pueden implementarse de forma
+            organizada mediante métodos especializados.
+        </li>
+        <li>
+            El uso de clases mejora la reutilización y mantenibilidad del
+            código.
+        </li>
+        <li>
+            El desarrollo de soluciones correctas y estructuradas fortalece el
+            compromiso ético y profesional del programador.
+        </li>
+    </ul>
+</div>
+
+<h2>Reflexión</h2>
+
+<p>
+    Esta actividad permitió comprender cómo la Programación Orientada a
+    Objetos facilita la representación de conceptos matemáticos complejos
+    mediante clases y objetos. Además, se evidenció la importancia de diseñar
+    software modular y organizado para desarrollar aplicaciones más robustas,
+    reutilizables y fáciles de mantener.
+</p></div>
+    </div>
+  </body>
+</html>

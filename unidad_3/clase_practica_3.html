@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diccionario de Etiquetas HTML</title>
+    <link rel="icon" type="image/x-icon" href="helmet_2823525.png" />
+
+    <style>
+      :root {
+        --primary-blue: #00d4ff;
+        --secondary-blue: #00b4d8;
+        --accent-orange: #ff9f1c;
+        --bg-dark: #1e1e26;
+        --card-bg: #2a2a35;
+        --text-gray: #b0b0b0;
+        --border-color: #3d3d4d;
+      }
+
+      body {
+        background-color: var(--bg-dark);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 40px 20px;
+        color: #e0e0e0;
+      }
+
+      .main-container {
+        background-color: var(--card-bg);
+        padding: 40px;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 900px;
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+        border: 1px solid #333;
+      }
+
+      /* Navegación superior */
+      .nav-buttons {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 30px;
+      }
+
+      .btn-nav {
+        text-decoration: none;
+        color: #a0a0a0;
+        background: #23232e;
+        padding: 10px 18px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        border: 1px solid var(--border-color);
+        transition: 0.3s;
+      }
+
+      .btn-nav:hover {
+        color: var(--primary-blue);
+        border-color: var(--primary-blue);
+        transform: translateY(-2px);
+      }
+
+      h1 {
+        color: var(--primary-blue);
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 2px;
+        border-bottom: 2px solid var(--primary-blue);
+        padding-bottom: 15px;
+        margin-bottom: 35px;
+      }
+
+      /* Estilo de la Tabla */
+      .table-container {
+        overflow-x: auto; /* Para que sea responsive en móviles */
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+      }
+
+      th {
+        background-color: #1a1a21;
+        color: var(--accent-orange);
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        padding: 15px;
+        text-align: left;
+        border-bottom: 2px solid var(--border-color);
+      }
+
+      td {
+        padding: 15px;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-gray);
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      /* Resaltado de etiquetas */
+      .tag-name {
+        font-family: "Courier New", Courier, monospace;
+        color: var(--primary-blue);
+        font-weight: bold;
+        background: rgba(0, 212, 255, 0.1);
+        padding: 4px 8px;
+        border-radius: 4px;
+      }
+
+      tr:hover {
+        background-color: rgba(255, 255, 255, 0.03);
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      .highlight {
+        color: var(--accent-orange);
+      }
+      pre {
+        background-color: #1e1e26;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #00d4ff;
+        font-family: "Consolas", monospace;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <nav class="nav-buttons">
+        <a href="../../index.html" class="btn-nav">🏠 Inicio</a>
+        <a href="unidad_3.html" class="btn-nav">📚 Mis Deberes</a>
+      </nav>
+      <h1>Clase Práctica No. 3</h1>
+
+      <h2>Objetivos</h2>
+      <p>
+        Desarrollar una aplicación en C# para la gestión de un videoclub que
+        permita administrar películas y videojuegos disponibles para alquiler.
+        Mediante esta práctica se busca aplicar los conceptos de Programación
+        Orientada a Objetos, utilizando clases, objetos, propiedades, métodos y
+        estructuras de control para gestionar el inventario, controlar la
+        disponibilidad de los artículos y registrar las operaciones de alquiler
+        y devolución. Además, esta actividad fomenta el trabajo en equipo y la
+        resolución de problemas mediante el diseño de sistemas informáticos.
+      </p>
+
+      <h2>Descripción del Problema</h2>
+
+      <p>
+        Se requiere desarrollar un sistema para un videoclub que alquila
+        películas y videojuegos. El programa deberá registrar todos los
+        artículos disponibles, controlar cuáles se encuentran alquilados y
+        llevar un conteo del número de veces que cada uno ha sido rentado.
+      </p>
+
+      <p>El sistema deberá permitir gestionar dos tipos de elementos:</p>
+
+      <ul>
+        <li>Películas.</li>
+        <li>Videojuegos.</li>
+      </ul>
+
+      <h2>Características de los Videojuegos</h2>
+
+      <ul>
+        <li>Nombre.</li>
+        <li>Año de edición.</li>
+        <li>Sistema (PlayStation, PS2, Xbox, PC, etc.).</li>
+        <li>Descripción.</li>
+        <li>Número de registro único.</li>
+      </ul>
+
+      <h2>Características de las Películas</h2>
+
+      <ul>
+        <li>Título.</li>
+        <li>Clase o género.</li>
+        <li>País de producción.</li>
+        <li>Número de registro único.</li>
+      </ul>
+
+      <h2>Funciones del Sistema</h2>
+
+      <ul>
+        <li>Registrar películas.</li>
+        <li>Registrar videojuegos.</li>
+        <li>Generar automáticamente números de registro.</li>
+        <li>Mostrar todos los artículos registrados.</li>
+        <li>Mostrar artículos alquilados.</li>
+        <li>Mostrar artículos disponibles.</li>
+        <li>Consultar una película por título.</li>
+        <li>Consultar un videojuego por nombre.</li>
+        <li>Realizar alquileres.</li>
+        <li>Registrar devoluciones.</li>
+        <li>Contabilizar el número de alquileres realizados.</li>
+      </ul>
+
+      <h2>Diseño de Clases</h2>
+
+      <h3 class="highlight">Clase Material</h3>
+
+      <p>
+        Representa las características comunes entre películas y videojuegos.
+      </p>
+
+      <pre>
+class Material
+{
+    public int NumeroRegistro { get; set; }
+
+    public bool Alquilado { get; set; }
+
+    public int VecesAlquilado { get; set; }
+}
+</pre
+      >
+
+      <h3 class="highlight">Clase Pelicula</h3>
+
+      <pre>
+class Pelicula : Material
+{
+    public string Titulo { get; set; }
+
+    public string Genero { get; set; }
+
+    public string PaisProduccion { get; set; }
+}
+</pre
+      >
+
+      <h3 class="highlight">Clase Videojuego</h3>
+
+      <pre>
+class Videojuego : Material
+{
+    public string Nombre { get; set; }
+
+    public int AnioEdicion { get; set; }
+
+    public string Sistema { get; set; }
+
+    public string Descripcion { get; set; }
+}
+</pre
+      >
+
+      <h2>Generación Automática del Número de Registro</h2>
+
+      <p>
+        Cada vez que se registre una película o videojuego, el sistema asignará
+        automáticamente un identificador único.
+      </p>
+
+      <pre>
+private static int contador = 1;
+
+NumeroRegistro = contador++;
+</pre
+      >
+
+      <p>
+        Esto garantiza que no existan dos artículos con el mismo número de
+        registro.
+      </p>
+
+      <h2>Proceso de Alquiler</h2>
+
+      <ul>
+        <li>Ingresar el número de registro.</li>
+        <li>Verificar disponibilidad.</li>
+        <li>Si está disponible, marcar como alquilado.</li>
+        <li>Incrementar el contador de alquileres.</li>
+        <li>Mostrar mensaje de confirmación.</li>
+      </ul>
+
+      <pre>
+if (!material.Alquilado)
+{
+    material.Alquilado = true;
+    material.VecesAlquilado++;
+}
+</pre
+      >
+
+      <h2>Proceso de Devolución</h2>
+
+      <ul>
+        <li>Ingresar número de registro.</li>
+        <li>Buscar el artículo.</li>
+        <li>Actualizar estado a disponible.</li>
+      </ul>
+
+      <pre>
+material.Alquilado = false;
+</pre
+      >
+
+      <h2>Consulta de Artículos</h2>
+
+      <p>
+        El sistema permitirá buscar películas por título y videojuegos por
+        nombre.
+      </p>
+
+      <pre>
+if (pelicula.Titulo == tituloBuscado)
+{
+    Console.WriteLine("Película encontrada");
+}
+</pre
+      >
+
+      <h2>Programa Principal</h2>
+
+<pre>
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static List<Material> inventario =
+        new List<Material>();
+
+    static void Main()
+    {
+        int opcion;
+
+        do
+        {
+            Console.WriteLine("\n=== VIDEOCLUB ===");
+            Console.WriteLine("1. Registrar película");
+            Console.WriteLine("2. Registrar videojuego");
+            Console.WriteLine("3. Mostrar inventario");
+            Console.WriteLine("4. Alquilar");
+            Console.WriteLine("5. Devolver");
+            Console.WriteLine("6. Salir");
+
+            opcion = int.Parse(
+                Console.ReadLine()
+            );
+
+            switch(opcion)
+            {
+                case 1:
+                    RegistrarPelicula();
+                    break;
+
+                case 2:
+                    RegistrarVideojuego();
+                    break;
+
+                case 3:
+                    MostrarInventario();
+                    break;
+
+                case 4:
+                    Alquilar();
+                    break;
+
+                case 5:
+                    Devolver();
+                    break;
+            }
+
+        } while(opcion != 6);
+    }
+}
+</pre>
+
+      <h2>Ejemplo de Inventario</h2>
+
+      <pre>
+N° REG.  TIPO         NOMBRE/TÍTULO          ESTADO
+
+1001     Película     Avengers               Disponible
+1002     Videojuego   FIFA 25                Alquilado
+1003     Película     Toy Story              Disponible
+</pre
+      >
+
+      <h2>Conceptos Aplicados</h2>
+
+      <ul>
+        <li>Clases y objetos.</li>
+        <li>Herencia.</li>
+        <li>Propiedades.</li>
+        <li>Métodos.</li>
+        <li>Encapsulamiento.</li>
+        <li>Listas de objetos.</li>
+        <li>Validación de datos.</li>
+        <li>Programación Orientada a Objetos.</li>
+      </ul>
+
+      <h2>Análisis de Resultados</h2>
+
+      <p>
+        La implementación de un sistema de videoclub mediante Programación
+        Orientada a Objetos permite organizar mejor la información y reutilizar
+        código. La herencia facilita compartir características comunes entre
+        películas y videojuegos, mientras que las propiedades y métodos permiten
+        gestionar de forma eficiente los procesos de alquiler y devolución.
+      </p>
+
+      <h2>Ventajas de la Solución</h2>
+
+      <ul>
+        <li>Control eficiente del inventario.</li>
+        <li>Identificación única mediante número de registro.</li>
+        <li>Mayor organización de la información.</li>
+        <li>Facilidad para ampliar funcionalidades futuras.</li>
+        <li>Automatización de procesos de alquiler y devolución.</li>
+      </ul>
+
+      <h2>Conclusiones</h2>
+
+      <div class="conclusiones-lista">
+        <ul>
+          <li>
+            Se aplicaron los conceptos fundamentales de Programación Orientada a
+            Objetos para modelar un sistema real.
+          </li>
+          <li>
+            La herencia permitió reutilizar características comunes entre
+            películas y videojuegos.
+          </li>
+          <li>
+            El uso de clases y objetos facilitó la organización y gestión del
+            inventario.
+          </li>
+          <li>
+            La generación automática de números de registro garantiza la
+            identificación única de cada artículo.
+          </li>
+          <li>
+            El sistema desarrollado permite controlar de manera eficiente la
+            disponibilidad y el historial de alquileres.
+          </li>
+        </ul>
+      </div>
+
+      <h2>Reflexión</h2>
+
+      <p>
+        Esta práctica permitió comprender cómo los principios de la Programación
+        Orientada a Objetos pueden aplicarse en situaciones reales de gestión
+        empresarial. Además, se evidenció la importancia de diseñar sistemas
+        organizados, reutilizables y escalables para resolver problemas de forma
+        eficiente, fortaleciendo tanto las habilidades técnicas como el trabajo
+        en equipo.
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividad 1 - Electrónica</title>
+    <link rel="icon" type="image/x-icon" href="helmet_2823525.png" />
+
+    <style>
+      body {
+        background-color: #1e1e26;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 40px 0;
+        color: #e0e0e0;
+      }
+
+      .main-container {
+        background-color: #2a2a35;
+        padding: 40px;
+        border-radius: 20px;
+        width: 90%;
+        max-width: 700px;
+        box-shadow:
+          10px 10px 20px #15151a,
+          -5px -5px 15px #3f3f4f;
+        border: 1px solid #333;
+      }
+
+      /* Estilo para los botones de navegación superior */
+      .nav-buttons {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 30px;
+      }
+
+      .btn-nav {
+        text-decoration: none;
+        color: #a0a0a0;
+        background: #2a2a35;
+        padding: 8px 15px;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        border: 1px solid #444;
+        transition: all 0.3s ease;
+        box-shadow:
+          3px 3px 6px #15151a,
+          -2px -2px 5px #3f3f4f;
+      }
+
+      .btn-nav:hover {
+        color: #00d4ff;
+        border-color: #00d4ff;
+        transform: translateY(-2px);
+      }
+
+      h1 {
+        color: #00d4ff;
+        text-transform: uppercase;
+        text-align: center;
+        border-bottom: 2px solid #00d4ff;
+        padding-bottom: 10px;
+        margin-top: 0;
+      }
+
+      h2 {
+        color: #00b4d8;
+        font-size: 1.3rem;
+        margin-top: 25px;
+        display: flex;
+        align-items: center;
+      }
+
+      h2::before {
+        content: "▹";
+        margin-right: 10px;
+        color: #ff9f1c;
+      }
+
+      p,
+      li {
+        line-height: 1.6;
+        color: #b0b0b0;
+      }
+      ul {
+        list-style-type: square;
+        padding-left: 20px;
+      }
+
+      .btn-link {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        color: #ffffff;
+        background: linear-gradient(145deg, #00b4d8, #0077b6);
+        padding: 15px;
+        border-radius: 12px;
+        font-weight: bold;
+        margin-top: 30px;
+        transition: all 0.3s ease;
+        box-shadow: 4px 4px 8px #1a1a21;
+      }
+
+      .btn-link:hover {
+        transform: scale(1.02);
+        background: linear-gradient(145deg, #00d4ff, #0096c7);
+        box-shadow: 0px 0px 15px rgba(0, 212, 255, 0.5);
+      }
+
+      .highlight {
+        color: #ff9f1c;
+        font-weight: bold;
+      }
+
+      .img-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+        box-shadow: 0px 0px 15px rgba(0, 212, 255, 0.5);
+      }
+      .conclusiones-lista ul li {
+        margin-bottom: 15px;
+        padding-left: 10px;
+        border-left: 2px solid #ff9f1c;
+      }
+      pre {
+        background-color: #1e1e26;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #00d4ff;
+        font-family: "Consolas", monospace;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <nav class="nav-buttons">
+        <a href="../../index.html" class="btn-nav">🏠 Home</a>
+        <a href="../deberes.html" class="btn-nav">📚 Mis Deberes</a>
+      </nav>
+
+      <h1>Clase Práctica No. 1</h1>
+
+      <h2>Objetivos</h2>
+      <p>
+        Diseñar e implementar una calculadora simple en C# capaz de realizar
+        operaciones aritméticas básicas entre dos números enteros. Mediante esta
+        práctica se busca comprender el uso de variables, operadores
+        aritméticos, entrada y salida de datos, así como la utilización de
+        estructuras condicionales para tomar decisiones según la operación
+        seleccionada por el usuario. Esta actividad contribuye al desarrollo del
+        pensamiento crítico y reflexivo para la resolución de problemas mediante
+        programación.
+      </p>
+
+      <h2>Descripción del Problema</h2>
+      <p>
+        Se requiere desarrollar un programa que funcione como una calculadora
+        básica. El sistema deberá solicitar al usuario dos números enteros y una
+        operación aritmética (+, -, * o /). Posteriormente, el programa evaluará
+        la operación ingresada y mostrará el resultado correspondiente.
+      </p>
+
+      <h2>Operaciones Disponibles</h2>
+
+      <ul>
+        <li><span class="highlight">+</span> Suma</li>
+        <li><span class="highlight">-</span> Resta</li>
+        <li><span class="highlight">*</span> Multiplicación</li>
+        <li><span class="highlight">/</span> División</li>
+      </ul>
+
+      <h2>Algoritmo</h2>
+
+      <ul>
+        <li>Inicio.</li>
+        <li>Solicitar el primer número entero.</li>
+        <li>Solicitar el segundo número entero.</li>
+        <li>Solicitar la operación aritmética.</li>
+        <li>Evaluar la operación ingresada.</li>
+        <li>Realizar el cálculo correspondiente.</li>
+        <li>Mostrar el resultado.</li>
+        <li>Si la operación no es válida, mostrar un mensaje de error.</li>
+        <li>Fin.</li>
+      </ul>
+
+      <h2>Código en C#</h2>
+
+      <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int num1, num2;
+        char operacion;
+
+        Console.Write("Ingrese el primer número: ");
+        num1 = int.Parse(Console.ReadLine());
+
+        Console.Write("Ingrese el segundo número: ");
+        num2 = int.Parse(Console.ReadLine());
+
+        Console.Write("Ingrese la operación (+, -, *, /): ");
+        operacion = char.Parse(Console.ReadLine());
+
+        switch (operacion)
+        {
+            case '+':
+                Console.WriteLine(
+                    "Resultado: " + (num1 + num2)
+                );
+                break;
+
+            case '-':
+                Console.WriteLine(
+                    "Resultado: " + (num1 - num2)
+                );
+                break;
+
+            case '*':
+                Console.WriteLine(
+                    "Resultado: " + (num1 * num2)
+                );
+                break;
+
+            case '/':
+                if (num2 != 0)
+                {
+                    Console.WriteLine(
+                        "Resultado: " +
+                        (double)num1 / num2
+                    );
+                }
+                else
+                {
+                    Console.WriteLine(
+                        "Error: No se puede dividir para cero."
+                    );
+                }
+                break;
+
+            default:
+                Console.WriteLine(
+                    "Operación no válida."
+                );
+                break;
+        }
+    }
+}
+</pre
+      >
+
+      <h2>Ejemplo de Ejecución</h2>
+
+      <ul>
+        <li>Primer número: 15</li>
+        <li>Segundo número: 5</li>
+        <li>Operación: +</li>
+        <li><span class="highlight">Resultado:</span> 20</li>
+      </ul>
+
+      <h2>Análisis de Resultados</h2>
+
+      <p>
+        El programa identifica la operación ingresada por el usuario y ejecuta
+        el cálculo correspondiente mediante una estructura condicional
+        <span class="highlight">switch</span>. Esto permite seleccionar la
+        acción adecuada de forma eficiente y mostrar el resultado esperado.
+      </p>
+
+      <h2>Conceptos Aplicados</h2>
+
+      <ul>
+        <li>Tipos de datos enteros.</li>
+        <li>Variables y constantes.</li>
+        <li>Operadores aritméticos.</li>
+        <li>Entrada y salida de datos.</li>
+        <li>Estructuras de control condicionales.</li>
+        <li>Validación de datos para evitar errores.</li>
+      </ul>
+
+      <h2>Conclusiones</h2>
+
+      <div class="conclusiones-lista">
+        <ul>
+          <li>
+            Se aplicaron los conocimientos básicos de programación para
+            desarrollar una calculadora funcional.
+          </li>
+          <li>
+            Se utilizaron estructuras condicionales para seleccionar la
+            operación matemática adecuada según la entrada del usuario.
+          </li>
+          <li>
+            Se reforzó el uso de operadores aritméticos y el manejo de variables
+            en C#.
+          </li>
+          <li>
+            La validación de la división por cero permite evitar errores durante
+            la ejecución del programa.
+          </li>
+          <li>
+            Este ejercicio fortalece el pensamiento lógico y la capacidad de
+            resolver problemas mediante algoritmos y programación.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

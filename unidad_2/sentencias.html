@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diccionario de Etiquetas HTML</title>
+    <link rel="icon" type="image/x-icon" href="helmet_2823525.png" />
+
+    <style>
+      :root {
+        --primary-blue: #00d4ff;
+        --secondary-blue: #00b4d8;
+        --accent-orange: #ff9f1c;
+        --bg-dark: #1e1e26;
+        --card-bg: #2a2a35;
+        --text-gray: #b0b0b0;
+        --border-color: #3d3d4d;
+      }
+
+      body {
+        background-color: var(--bg-dark);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 40px 20px;
+        color: #e0e0e0;
+      }
+
+      .main-container {
+        background-color: var(--card-bg);
+        padding: 40px;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 900px;
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+        border: 1px solid #333;
+      }
+
+      /* Navegación superior */
+      .nav-buttons {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 30px;
+      }
+
+      .btn-nav {
+        text-decoration: none;
+        color: #a0a0a0;
+        background: #23232e;
+        padding: 10px 18px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        border: 1px solid var(--border-color);
+        transition: 0.3s;
+      }
+
+      .btn-nav:hover {
+        color: var(--primary-blue);
+        border-color: var(--primary-blue);
+        transform: translateY(-2px);
+      }
+
+      h1 {
+        color: var(--primary-blue);
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 2px;
+        border-bottom: 2px solid var(--primary-blue);
+        padding-bottom: 15px;
+        margin-bottom: 35px;
+      }
+
+      /* Estilo de la Tabla */
+      .table-container {
+        overflow-x: auto; /* Para que sea responsive en móviles */
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+      }
+
+      th {
+        background-color: #1a1a21;
+        color: var(--accent-orange);
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        padding: 15px;
+        text-align: left;
+        border-bottom: 2px solid var(--border-color);
+      }
+
+      td {
+        padding: 15px;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-gray);
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      /* Resaltado de etiquetas */
+      .tag-name {
+        font-family: "Courier New", Courier, monospace;
+        color: var(--primary-blue);
+        font-weight: bold;
+        background: rgba(0, 212, 255, 0.1);
+        padding: 4px 8px;
+        border-radius: 4px;
+      }
+
+      tr:hover {
+        background-color: rgba(255, 255, 255, 0.03);
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      .highlight {
+        color: var(--accent-orange);
+      }
+      pre {
+        background-color: #1e1e26;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #00d4ff;
+        font-family: "Consolas", monospace;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <nav class="nav-buttons">
+        <a href="../../index.html" class="btn-nav">🏠 Inicio</a>
+        <a href="../unidad_2/unidad_2.html" class="btn-nav">📚 Mis Deberes</a>
+      </nav>
+      <h1>Unidad 2: Estructuras de Control</h1>
+
+      <h2>Objetivo</h2>
+      <p>
+        Comprender el funcionamiento de las estructuras de control condicionales
+        en C#, específicamente las sentencias
+        <span class="highlight">if</span> y
+        <span class="highlight">switch</span>, para tomar decisiones dentro de
+        un programa según las condiciones establecidas por el usuario o por la
+        lógica de la aplicación.
+      </p>
+
+      <h2>2.1 La Sentencia de Control IF</h2>
+
+      <p>
+        La sentencia <span class="highlight">if</span> permite ejecutar un
+        bloque de código únicamente cuando una condición es verdadera. Es una de
+        las estructuras más utilizadas en programación para la toma de
+        decisiones.
+      </p>
+
+      <h3 class="highlight">Sintaxis</h3>
+
+      <pre>
+if (condicion)
+{
+    // Instrucciones
+}
+</pre
+      >
+
+      <p>
+        Cuando la condición se evalúa como <strong>true</strong>, las
+        instrucciones dentro del bloque se ejecutan. Si la condición es falsa,
+        el bloque es ignorado.
+      </p>
+
+      <h3 class="highlight">Ejemplo Simple</h3>
+
+      <pre>
+int edad = 20;
+
+if (edad >= 18)
+{
+    Console.WriteLine("Es mayor de edad");
+}
+</pre
+      >
+
+      <p>
+        En este ejemplo, el mensaje se mostrará porque la condición
+        <span class="highlight">edad >= 18</span> es verdadera.
+      </p>
+
+      <h3 class="highlight">Uso de IF - ELSE</h3>
+
+      <p>
+        La estructura <span class="highlight">if - else</span> permite ejecutar
+        un bloque de instrucciones cuando la condición es verdadera y otro
+        bloque diferente cuando es falsa.
+      </p>
+
+      <pre>
+int edad = 16;
+
+if (edad >= 18)
+{
+    Console.WriteLine("Mayor de edad");
+}
+else
+{
+    Console.WriteLine("Menor de edad");
+}
+</pre
+      >
+
+      <h2>Ventajas del IF</h2>
+
+      <ul>
+        <li>Permite tomar decisiones dentro del programa.</li>
+        <li>Facilita la validación de datos.</li>
+        <li>Ayuda a controlar el flujo de ejecución.</li>
+        <li>Es fácil de implementar y comprender.</li>
+      </ul>
+
+      <h2>2.2 La Sentencia de Control SWITCH</h2>
+
+      <p>
+        La sentencia <span class="highlight">switch</span> permite seleccionar
+        una acción entre varias alternativas posibles según el valor de una
+        variable o expresión.
+      </p>
+
+      <h3 class="highlight">Sintaxis</h3>
+
+      <pre>
+switch(variable)
+{
+    case valor1:
+        // Instrucciones
+        break;
+
+    case valor2:
+        // Instrucciones
+        break;
+
+    default:
+        // Instrucciones por defecto
+        break;
+}
+</pre
+      >
+
+      <p>
+        Cada opción se representa mediante la palabra reservada
+        <span class="highlight">case</span>. Si ninguna condición coincide, se
+        ejecuta el bloque <span class="highlight">default</span>.
+      </p>
+
+      <h3 class="highlight">Ejemplo</h3>
+
+      <pre>
+int opcion = 2;
+
+switch(opcion)
+{
+    case 1:
+        Console.WriteLine("Opción 1");
+        break;
+
+    case 2:
+        Console.WriteLine("Opción 2");
+        break;
+
+    case 3:
+        Console.WriteLine("Opción 3");
+        break;
+
+    default:
+        Console.WriteLine("Opción inválida");
+        break;
+}
+</pre
+      >
+
+      <p>
+        En este caso se mostrará el mensaje <strong>"Opción 2"</strong> porque
+        el valor de la variable coincide con el segundo caso.
+      </p>
+
+      <h2>Diferencias entre IF y SWITCH</h2>
+
+      <ul>
+        <li>
+          <span class="highlight">if</span> es ideal para evaluar condiciones
+          complejas utilizando operadores relacionales y lógicos.
+        </li>
+        <li>
+          <span class="highlight">switch</span> es más adecuado cuando se desea
+          seleccionar entre varios valores específicos.
+        </li>
+        <li>
+          El uso de <span class="highlight">switch</span> puede hacer el código
+          más organizado cuando existen muchas opciones.
+        </li>
+      </ul>
+
+      <h2>Aplicaciones Prácticas</h2>
+
+      <ul>
+        <li>Sistemas de menús.</li>
+        <li>Calculadoras.</li>
+        <li>Validación de usuarios.</li>
+        <li>Control de acceso.</li>
+        <li>Selección de opciones en formularios.</li>
+      </ul>
+
+      <h2>Conclusiones</h2>
+
+      <div class="conclusiones-lista">
+        <ul>
+          <li>
+            La sentencia <span class="highlight">if</span> permite ejecutar
+            instrucciones dependiendo de una condición lógica.
+          </li>
+          <li>
+            La estructura <span class="highlight">switch</span> facilita la
+            selección entre múltiples alternativas de forma organizada.
+          </li>
+          <li>
+            Ambas estructuras son fundamentales para la toma de decisiones en
+            cualquier programa desarrollado en C#.
+          </li>
+          <li>
+            El dominio de estas sentencias permite desarrollar aplicaciones más
+            dinámicas, eficientes y adaptables a diferentes situaciones.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

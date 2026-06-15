@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diccionario de Etiquetas HTML</title>
+    <link rel="icon" type="image/x-icon" href="helmet_2823525.png" />
+
+    <style>
+      :root {
+        --primary-blue: #00d4ff;
+        --secondary-blue: #00b4d8;
+        --accent-orange: #ff9f1c;
+        --bg-dark: #1e1e26;
+        --card-bg: #2a2a35;
+        --text-gray: #b0b0b0;
+        --border-color: #3d3d4d;
+      }
+
+      body {
+        background-color: var(--bg-dark);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 40px 20px;
+        color: #e0e0e0;
+      }
+
+      .main-container {
+        background-color: var(--card-bg);
+        padding: 40px;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 900px;
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+        border: 1px solid #333;
+      }
+
+      /* Navegación superior */
+      .nav-buttons {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 30px;
+      }
+
+      .btn-nav {
+        text-decoration: none;
+        color: #a0a0a0;
+        background: #23232e;
+        padding: 10px 18px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        border: 1px solid var(--border-color);
+        transition: 0.3s;
+      }
+
+      .btn-nav:hover {
+        color: var(--primary-blue);
+        border-color: var(--primary-blue);
+        transform: translateY(-2px);
+      }
+
+      h1 {
+        color: var(--primary-blue);
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 2px;
+        border-bottom: 2px solid var(--primary-blue);
+        padding-bottom: 15px;
+        margin-bottom: 35px;
+      }
+
+      /* Estilo de la Tabla */
+      .table-container {
+        overflow-x: auto; /* Para que sea responsive en móviles */
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+      }
+
+      th {
+        background-color: #1a1a21;
+        color: var(--accent-orange);
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        padding: 15px;
+        text-align: left;
+        border-bottom: 2px solid var(--border-color);
+      }
+
+      td {
+        padding: 15px;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-gray);
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      /* Resaltado de etiquetas */
+      .tag-name {
+        font-family: "Courier New", Courier, monospace;
+        color: var(--primary-blue);
+        font-weight: bold;
+        background: rgba(0, 212, 255, 0.1);
+        padding: 4px 8px;
+        border-radius: 4px;
+      }
+
+      tr:hover {
+        background-color: rgba(255, 255, 255, 0.03);
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      .highlight {
+        color: var(--accent-orange);
+      }
+      pre {
+        background-color: #1e1e26;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #00d4ff;
+        font-family: "Consolas", monospace;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <nav class="nav-buttons">
+        <a href="../../index.html" class="btn-nav">🏠 Inicio</a>
+        <a href="../unidad_2/unidad_2.html" class="btn-nav">📚 Mis Deberes</a>
+      </nav>
+      <h1>Trabajo Autónomo No. 04</h1>
+
+      <h2>Objetivos</h2>
+      <p>
+        Desarrollar programas en C# que permitan calcular el factorial de un
+        número entero positivo ingresado por el usuario utilizando dos
+        estructuras repetitivas diferentes:
+        <span class="highlight">while</span> y
+        <span class="highlight">for</span>. Mediante esta actividad se busca
+        comprender el funcionamiento de los ciclos, comparar sus
+        implementaciones y fortalecer el pensamiento crítico y reflexivo para la
+        resolución de problemas mediante programación.
+      </p>
+
+      <h2>Descripción del Problema</h2>
+
+      <p>
+        Se requiere elaborar un programa que solicite un número entero positivo
+        N y calcule su factorial. Además, se deben desarrollar dos versiones de
+        la solución: una utilizando la sentencia
+        <span class="highlight">while</span> y otra empleando la sentencia
+        <span class="highlight">for</span>, con el propósito de comparar ambas
+        estructuras de repetición.
+      </p>
+
+      <h2>Fundamento Teórico</h2>
+
+      <p>
+        El factorial de un número entero positivo N se representa mediante el
+        símbolo <span class="highlight">N!</span> y consiste en multiplicar
+        todos los números enteros desde 1 hasta N.
+      </p>
+
+      <p>Por ejemplo:</p>
+
+      <pre>
+5! = 5 × 4 × 3 × 2 × 1 = 120
+
+4! = 4 × 3 × 2 × 1 = 24
+
+3! = 3 × 2 × 1 = 6
+</pre
+      >
+
+      <p>
+        El factorial es ampliamente utilizado en matemáticas, estadística,
+        combinatoria e informática.
+      </p>
+
+      <h2>Algoritmo</h2>
+
+      <ul>
+        <li>Inicio.</li>
+        <li>Solicitar un número entero positivo N.</li>
+        <li>Inicializar la variable factorial en 1.</li>
+        <li>Multiplicar factorial por cada número desde 1 hasta N.</li>
+        <li>Mostrar el resultado obtenido.</li>
+        <li>Fin.</li>
+      </ul>
+
+      <h2>Implementación con WHILE</h2>
+
+      <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int numero, contador = 1;
+        long factorial = 1;
+
+        Console.Write("Ingrese un número: ");
+        numero = int.Parse(Console.ReadLine());
+
+        while (contador <= numero)
+        {
+            factorial *= contador;
+            contador++;
+        }
+
+        Console.WriteLine(
+            "El factorial es: " + factorial
+        );
+    }
+}
+</pre
+      >
+
+      <h2>Implementación con FOR</h2>
+
+      <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int numero;
+        long factorial = 1;
+
+        Console.Write("Ingrese un número: ");
+        numero = int.Parse(Console.ReadLine());
+
+        for (int i = 1; i <= numero; i++)
+        {
+            factorial *= i;
+        }
+
+        Console.WriteLine(
+            "El factorial es: " + factorial
+        );
+    }
+}
+</pre
+      >
+
+      <h2>Ejemplo de Ejecución</h2>
+
+      <ul>
+        <li>Número ingresado: 5</li>
+        <li>Cálculo: 5 × 4 × 3 × 2 × 1</li>
+        <li><span class="highlight">Resultado:</span> 120</li>
+      </ul>
+
+      <h2>Comparación entre WHILE y FOR</h2>
+
+      <ul>
+        <li>
+          La estructura <span class="highlight">while</span> ejecuta las
+          instrucciones mientras la condición sea verdadera.
+        </li>
+        <li>
+          La estructura <span class="highlight">for</span> integra la
+          inicialización, condición e incremento en una sola línea.
+        </li>
+        <li>
+          Para recorridos con una cantidad conocida de iteraciones, el ciclo
+          <span class="highlight">for</span> suele ser más compacto y legible.
+        </li>
+        <li>
+          El ciclo <span class="highlight">while</span> resulta útil cuando no
+          se conoce previamente el número exacto de repeticiones.
+        </li>
+      </ul>
+
+      <h2>Análisis de Resultados</h2>
+
+      <p>
+        Ambas implementaciones producen exactamente el mismo resultado. La
+        diferencia principal radica en la forma de controlar las iteraciones.
+        Mientras que el ciclo <span class="highlight">while</span> requiere una
+        variable de control externa, el ciclo
+        <span class="highlight">for</span> permite gestionar todo el proceso en
+        una sola estructura.
+      </p>
+
+      <h2>Conceptos Aplicados</h2>
+
+      <ul>
+        <li>Variables y tipos de datos.</li>
+        <li>Entrada y salida de datos.</li>
+        <li>Operadores aritméticos.</li>
+        <li>Estructuras repetitivas while.</li>
+        <li>Estructuras repetitivas for.</li>
+        <li>Acumuladores.</li>
+        <li>Resolución de problemas mediante algoritmos.</li>
+      </ul>
+
+      <h2>Conclusiones</h2>
+
+      <div class="conclusiones-lista">
+        <ul>
+          <li>
+            Se comprendió el concepto matemático de factorial y su aplicación
+            mediante programación.
+          </li>
+          <li>
+            Se implementaron dos soluciones equivalentes utilizando las
+            estructuras repetitivas while y for.
+          </li>
+          <li>
+            Se observó que ambas estructuras permiten resolver el mismo
+            problema, aunque presentan diferencias en su sintaxis y
+            organización.
+          </li>
+          <li>
+            El uso de ciclos facilita la automatización de procesos repetitivos
+            dentro de un programa.
+          </li>
+          <li>
+            Este ejercicio fortaleció el pensamiento lógico, analítico y
+            reflexivo necesario para el desarrollo de software.
+          </li>
+        </ul>
+      </div>
+
+      <h2>Reflexión</h2>
+
+      <p>
+        El desarrollo de este ejercicio permitió identificar que un mismo
+        problema puede resolverse mediante diferentes estructuras de
+        programación. Comparar las soluciones con while y for ayudó a comprender
+        las ventajas y características de cada ciclo, fortaleciendo la capacidad
+        de análisis y la selección adecuada de herramientas para resolver
+        problemas de manera eficiente.
+      </p>
+    </div>
+  </body>
+</html>

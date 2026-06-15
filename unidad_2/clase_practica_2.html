@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diccionario de Etiquetas HTML</title>
+    <link rel="icon" type="image/x-icon" href="helmet_2823525.png" />
+
+    <style>
+      :root {
+        --primary-blue: #00d4ff;
+        --secondary-blue: #00b4d8;
+        --accent-orange: #ff9f1c;
+        --bg-dark: #1e1e26;
+        --card-bg: #2a2a35;
+        --text-gray: #b0b0b0;
+        --border-color: #3d3d4d;
+      }
+
+      body {
+        background-color: var(--bg-dark);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 40px 20px;
+        color: #e0e0e0;
+      }
+
+      .main-container {
+        background-color: var(--card-bg);
+        padding: 40px;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 900px;
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+        border: 1px solid #333;
+      }
+
+      /* Navegación superior */
+      .nav-buttons {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 30px;
+      }
+
+      .btn-nav {
+        text-decoration: none;
+        color: #a0a0a0;
+        background: #23232e;
+        padding: 10px 18px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        border: 1px solid var(--border-color);
+        transition: 0.3s;
+      }
+
+      .btn-nav:hover {
+        color: var(--primary-blue);
+        border-color: var(--primary-blue);
+        transform: translateY(-2px);
+      }
+
+      h1 {
+        color: var(--primary-blue);
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 2px;
+        border-bottom: 2px solid var(--primary-blue);
+        padding-bottom: 15px;
+        margin-bottom: 35px;
+      }
+
+      /* Estilo de la Tabla */
+      .table-container {
+        overflow-x: auto; /* Para que sea responsive en móviles */
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+      }
+
+      th {
+        background-color: #1a1a21;
+        color: var(--accent-orange);
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        padding: 15px;
+        text-align: left;
+        border-bottom: 2px solid var(--border-color);
+      }
+
+      td {
+        padding: 15px;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-gray);
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      /* Resaltado de etiquetas */
+      .tag-name {
+        font-family: "Courier New", Courier, monospace;
+        color: var(--primary-blue);
+        font-weight: bold;
+        background: rgba(0, 212, 255, 0.1);
+        padding: 4px 8px;
+        border-radius: 4px;
+      }
+
+      tr:hover {
+        background-color: rgba(255, 255, 255, 0.03);
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      .highlight {
+        color: var(--accent-orange);
+      }
+      pre {
+        background-color: #1e1e26;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #00d4ff;
+        font-family: "Consolas", monospace;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <nav class="nav-buttons">
+        <a href="../../index.html" class="btn-nav">🏠 Inicio</a>
+        <a href="../unidad_2/unidad_2.html" class="btn-nav">📚 Mis Deberes</a>
+      </nav>
+      <h1>Clase Práctica No. 2</h1>
+
+      <h2>Objetivos</h2>
+      <p>
+        Desarrollar un programa en C# que permita gestionar el cambio de una
+        clave de usuario mediante la validación de datos ingresados por teclado.
+        Utilizando estructuras de control condicionales y repetitivas, el
+        programa verificará que la nueva clave sea confirmada correctamente por
+        el usuario. Esta actividad busca fortalecer el manejo de variables,
+        captura de datos, toma de decisiones y repetición de procesos,
+        contribuyendo además al trabajo en equipo y al desarrollo del
+        pensamiento lógico.
+      </p>
+
+      <h2>Descripción del Problema</h2>
+
+      <p>
+        Se requiere elaborar un programa que solicite al usuario su nombre y una
+        clave inicial. Posteriormente, el sistema informará que la clave ha
+        caducado y solicitará una nueva clave.
+      </p>
+
+      <p>
+        Una vez ingresada la nueva clave, el usuario deberá confirmarla. Si
+        ambas coinciden, se mostrará el mensaje:
+      </p>
+
+      <pre>
+La clave se ha cambiado con éxito.
+</pre
+      >
+
+      <p>
+        Si las claves no coinciden, el sistema solicitará nuevamente la
+        confirmación de la clave, permitiendo un máximo de cinco intentos. Si al
+        finalizar los intentos la confirmación sigue siendo incorrecta, se
+        mostrará el mensaje:
+      </p>
+
+      <pre>
+Clave Incorrecta. Usuario Bloqueado.
+</pre
+      >
+
+      <h2>Algoritmo</h2>
+
+      <ul>
+        <li>Inicio.</li>
+        <li>Solicitar el nombre del usuario.</li>
+        <li>Solicitar la clave actual.</li>
+        <li>Mostrar mensaje de clave caducada.</li>
+        <li>Solicitar una nueva clave.</li>
+        <li>Solicitar la confirmación de la nueva clave.</li>
+        <li>Comparar ambas claves.</li>
+        <li>Si coinciden, mostrar mensaje de éxito.</li>
+        <li>Si no coinciden, permitir hasta cinco intentos.</li>
+        <li>Si supera los intentos permitidos, bloquear al usuario.</li>
+        <li>Fin.</li>
+      </ul>
+
+      <h2>Código en C#</h2>
+
+      <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string nombre;
+        string claveActual;
+        string nuevaClave;
+        string confirmacion;
+
+        bool claveCorrecta = false;
+        int intentos = 0;
+
+        Console.Write("Ingrese su nombre: ");
+        nombre = Console.ReadLine();
+
+        Console.Write("Ingrese su clave actual: ");
+        claveActual = Console.ReadLine();
+
+        Console.WriteLine(
+            "\nSu clave ha caducado. Por favor, introduzca su nueva clave."
+        );
+
+        nuevaClave = Console.ReadLine();
+
+        while (intentos < 5)
+        {
+            Console.WriteLine(
+                "Por favor, confirme su nueva clave:"
+            );
+
+            confirmacion = Console.ReadLine();
+
+            if (nuevaClave == confirmacion)
+            {
+                claveCorrecta = true;
+                break;
+            }
+
+            intentos++;
+
+            if (intentos < 5)
+            {
+                Console.WriteLine(
+                    "Por favor, vuelva a introducir su clave."
+                );
+            }
+        }
+
+        if (claveCorrecta)
+        {
+            Console.WriteLine(
+                "\nLa clave se ha cambiado con éxito."
+            );
+        }
+        else
+        {
+            Console.WriteLine(
+                "\nClave Incorrecta. Usuario Bloqueado."
+            );
+        }
+    }
+}
+</pre
+      >
+
+      <h2>Ejemplo de Ejecución</h2>
+
+      <ul>
+        <li>Nombre: Sofia</li>
+        <li>Clave actual: 1234</li>
+        <li>Nueva clave: abc123</li>
+        <li>Confirmación: abc123</li>
+        <li>
+          <span class="highlight">Resultado:</span>
+          La clave se ha cambiado con éxito.
+        </li>
+      </ul>
+
+      <h2>Análisis de Resultados</h2>
+
+      <p>
+        El programa utiliza una estructura repetitiva
+        <span class="highlight">while</span> para permitir hasta cinco intentos
+        de confirmación de la nueva clave. Además, emplea una estructura
+        condicional <span class="highlight">if</span> para verificar si las
+        claves coinciden y tomar la decisión correspondiente.
+      </p>
+
+      <h2>Conceptos Aplicados</h2>
+
+      <ul>
+        <li>Variables de tipo string.</li>
+        <li>Entrada y salida de datos.</li>
+        <li>Estructuras condicionales (if).</li>
+        <li>Estructuras repetitivas (while).</li>
+        <li>Validación de datos.</li>
+        <li>Control de intentos.</li>
+        <li>Comparación de cadenas de texto.</li>
+      </ul>
+
+      <h2>Conclusiones</h2>
+
+      <div class="conclusiones-lista">
+        <ul>
+          <li>
+            Se aplicaron estructuras de control para validar información
+            ingresada por el usuario.
+          </li>
+          <li>
+            El uso del ciclo while permitió controlar el número máximo de
+            intentos de confirmación.
+          </li>
+          <li>
+            La estructura if facilitó la toma de decisiones según las respuestas
+            proporcionadas por el usuario.
+          </li>
+          <li>
+            Se reforzó el manejo de variables de texto y la comparación de
+            cadenas en C#.
+          </li>
+          <li>
+            La actividad permitió comprender cómo funcionan los procesos de
+            autenticación y validación presentes en muchas aplicaciones reales.
+          </li>
+        </ul>
+      </div>
+
+      <h2>Reflexión</h2>
+
+      <p>
+        Durante el desarrollo de esta práctica se pudo observar la importancia
+        de validar correctamente los datos ingresados por los usuarios para
+        garantizar la seguridad y el correcto funcionamiento de un sistema.
+        Asimismo, se comprendió cómo las estructuras condicionales y repetitivas
+        trabajan en conjunto para controlar procesos que requieren múltiples
+        verificaciones, fortaleciendo las habilidades de análisis y resolución
+        de problemas.
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diccionario de Etiquetas HTML</title>
+    <link rel="icon" type="image/x-icon" href="helmet_2823525.png" />
+
+    <style>
+      :root {
+        --primary-blue: #00d4ff;
+        --secondary-blue: #00b4d8;
+        --accent-orange: #ff9f1c;
+        --bg-dark: #1e1e26;
+        --card-bg: #2a2a35;
+        --text-gray: #b0b0b0;
+        --border-color: #3d3d4d;
+      }
+
+      body {
+        background-color: var(--bg-dark);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 40px 20px;
+        color: #e0e0e0;
+      }
+
+      .main-container {
+        background-color: var(--card-bg);
+        padding: 40px;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 900px;
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+        border: 1px solid #333;
+      }
+
+      /* Navegación superior */
+      .nav-buttons {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 30px;
+      }
+
+      .btn-nav {
+        text-decoration: none;
+        color: #a0a0a0;
+        background: #23232e;
+        padding: 10px 18px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        border: 1px solid var(--border-color);
+        transition: 0.3s;
+      }
+
+      .btn-nav:hover {
+        color: var(--primary-blue);
+        border-color: var(--primary-blue);
+        transform: translateY(-2px);
+      }
+
+      h1 {
+        color: var(--primary-blue);
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 2px;
+        border-bottom: 2px solid var(--primary-blue);
+        padding-bottom: 15px;
+        margin-bottom: 35px;
+      }
+
+      /* Estilo de la Tabla */
+      .table-container {
+        overflow-x: auto; /* Para que sea responsive en móviles */
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+      }
+
+      th {
+        background-color: #1a1a21;
+        color: var(--accent-orange);
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        padding: 15px;
+        text-align: left;
+        border-bottom: 2px solid var(--border-color);
+      }
+
+      td {
+        padding: 15px;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-gray);
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      /* Resaltado de etiquetas */
+      .tag-name {
+        font-family: "Courier New", Courier, monospace;
+        color: var(--primary-blue);
+        font-weight: bold;
+        background: rgba(0, 212, 255, 0.1);
+        padding: 4px 8px;
+        border-radius: 4px;
+      }
+
+      tr:hover {
+        background-color: rgba(255, 255, 255, 0.03);
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      .highlight {
+        color: var(--accent-orange);
+      }
+      pre {
+        background-color: #1e1e26;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #00d4ff;
+        font-family: "Consolas", monospace;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <nav class="nav-buttons">
+        <a href="../../index.html" class="btn-nav">🏠 Inicio</a>
+        <a href="unidad_3.html" class="btn-nav">📚 Mis Deberes</a>
+      </nav>
+      <h1>Trabajo Autónomo No. 06</h1>
+
+      <h2>Objetivos</h2>
+      <p>
+        Desarrollar una aplicación en C# para la gestión de calificaciones de un
+        grupo de alumnos utilizando los principios de la Programación Orientada
+        a Objetos. Mediante esta actividad se busca comprender la creación de
+        clases, propiedades y métodos, así como la implementación de operaciones
+        de gestión de datos y el cálculo automático de calificaciones a partir
+        de la nota obtenida por cada estudiante. Además, esta actividad
+        fortalece el pensamiento crítico y reflexivo en la resolución de
+        problemas.
+      </p>
+
+      <h2>Descripción del Problema</h2>
+
+      <p>
+        Se requiere desarrollar un sistema que permita administrar la
+        información académica de un grupo de alumnos.
+      </p>
+
+      <p>Cada alumno estará caracterizado por los siguientes datos:</p>
+
+      <ul>
+        <li><span class="highlight">DNI</span></li>
+        <li><span class="highlight">Apellidos</span></li>
+        <li><span class="highlight">Nombre</span></li>
+        <li><span class="highlight">Nota</span></li>
+        <li><span class="highlight">Calificación</span></li>
+      </ul>
+
+      <p>
+        La calificación será calculada automáticamente según la nota obtenida:
+      </p>
+
+      <ul>
+        <li>SS (Suspenso): Nota menor que 5.</li>
+        <li>AP (Aprobado): Nota entre 5 y menor que 7.</li>
+        <li>NT (Notable): Nota entre 7 y menor que 9.</li>
+        <li>SB (Sobresaliente): Nota mayor o igual a 9.</li>
+      </ul>
+
+      <h2>Funciones del Sistema</h2>
+
+      <ul>
+        <li>Mostrar alumnos registrados.</li>
+        <li>Introducir un nuevo alumno.</li>
+        <li>Eliminar alumno por DNI.</li>
+        <li>Consultar nota y calificación por DNI.</li>
+        <li>Modificar nota de un alumno.</li>
+        <li>Mostrar alumnos suspensos.</li>
+        <li>Mostrar alumnos aprobados.</li>
+        <li>Mostrar candidatos a Matrícula de Honor.</li>
+        <li>Modificar calificación manualmente.</li>
+      </ul>
+
+      <h2>Diseño de la Clase Alumno</h2>
+
+      <pre>
+class Alumno
+{
+    public string DNI { get; set; }
+    public string Apellidos { get; set; }
+    public string Nombre { get; set; }
+    public double Nota { get; set; }
+    public string Calificacion { get; set; }
+}
+</pre
+      >
+
+      <h2>Cálculo Automático de la Calificación</h2>
+
+      <pre>
+public static string ObtenerCalificacion(
+    double nota)
+{
+    if (nota < 5)
+        return "SS";
+
+    if (nota < 7)
+        return "AP";
+
+    if (nota < 9)
+        return "NT";
+
+    return "SB";
+}
+</pre
+      >
+
+      <h2>Algoritmo General</h2>
+
+      <ul>
+        <li>Inicio.</li>
+        <li>Crear una lista de alumnos.</li>
+        <li>Mostrar menú de opciones.</li>
+        <li>Seleccionar una operación.</li>
+        <li>Ejecutar la acción correspondiente.</li>
+        <li>Actualizar información cuando sea necesario.</li>
+        <li>Mostrar resultados.</li>
+        <li>Finalizar cuando el usuario lo indique.</li>
+      </ul>
+
+      <h2>Ejemplo de Registro de Alumno</h2>
+
+      <pre>
+Alumno alumno1 = new Alumno();
+
+alumno1.DNI = "33245";
+alumno1.Apellidos = "García Pérez";
+alumno1.Nombre = "Carlos";
+alumno1.Nota = 7.8;
+alumno1.Calificacion =
+    ObtenerCalificacion(alumno1.Nota);
+</pre
+      >
+
+      <h2>Ejemplo de Salida</h2>
+
+      <pre>
+DNI     APELLIDOS         NOMBRE   NOTA  CALIFICACIÓN
+
+33245   García Pérez      Carlos   7.8   NT
+128676  Romero Rodríguez  Luisa    9.0   SB
+</pre
+      >
+
+      <h2>Consulta de Alumno por DNI</h2>
+
+      <p>
+        El sistema permitirá buscar un alumno mediante su DNI para visualizar su
+        nota y calificación correspondiente.
+      </p>
+
+      <pre>
+Ingrese DNI: 33245
+
+Nota: 7.8
+Calificación: NT
+</pre
+      >
+
+      <h2>Mostrar Alumnos Suspensos</h2>
+
+      <p>Se mostrarán todos los estudiantes cuya nota sea inferior a 5.</p>
+
+      <pre>
+if(alumno.Nota < 5)
+{
+    Console.WriteLine(alumno.Nombre);
+}
+</pre
+      >
+
+      <h2>Mostrar Alumnos Aprobados</h2>
+
+      <p>Se mostrarán todos los estudiantes con nota mayor o igual a 5.</p>
+
+      <pre>
+if(alumno.Nota >= 5)
+{
+    Console.WriteLine(alumno.Nombre);
+}
+</pre
+      >
+
+      <h2>Candidatos a Matrícula de Honor</h2>
+
+      <p>
+        Serán considerados candidatos aquellos estudiantes que tengan una nota
+        igual a 10.
+      </p>
+
+      <pre>
+if(alumno.Nota == 10)
+{
+    Console.WriteLine(alumno.Nombre);
+}
+</pre
+      >
+      <h2>Código en C#</h2>
+
+<pre>
+using System;
+using System.Collections.Generic;
+
+class Alumno
+{
+    public string DNI { get; set; }
+    public string Apellidos { get; set; }
+    public string Nombre { get; set; }
+    public double Nota { get; set; }
+    public string Calificacion { get; set; }
+
+    public void ActualizarCalificacion()
+    {
+        if (Nota < 5)
+            Calificacion = "SS";
+        else if (Nota < 7)
+            Calificacion = "AP";
+        else if (Nota < 9)
+            Calificacion = "NT";
+        else
+            Calificacion = "SB";
+    }
+}
+
+class Program
+{
+    static List<Alumno> alumnos =
+        new List<Alumno>();
+
+    static void Main()
+    {
+        int opcion;
+
+        do
+        {
+            Console.WriteLine("\n=== GESTIÓN DE ALUMNOS ===");
+            Console.WriteLine("1. Introducir alumno");
+            Console.WriteLine("2. Mostrar alumnos");
+            Console.WriteLine("3. Consultar alumno");
+            Console.WriteLine("4. Modificar nota");
+            Console.WriteLine("5. Eliminar alumno");
+            Console.WriteLine("6. Mostrar suspensos");
+            Console.WriteLine("7. Mostrar aprobados");
+            Console.WriteLine("8. Mostrar candidatos a MH");
+            Console.WriteLine("9. Salir");
+
+            opcion = int.Parse(Console.ReadLine());
+
+            switch (opcion)
+            {
+                case 1:
+                    IntroducirAlumno();
+                    break;
+                case 2:
+                    MostrarAlumnos();
+                    break;
+                case 3:
+                    ConsultarAlumno();
+                    break;
+                case 4:
+                    ModificarNota();
+                    break;
+                case 5:
+                    EliminarAlumno();
+                    break;
+                case 6:
+                    MostrarSuspensos();
+                    break;
+                case 7:
+                    MostrarAprobados();
+                    break;
+                case 8:
+                    MostrarMH();
+                    break;
+            }
+
+        } while (opcion != 9);
+    }
+
+    static void IntroducirAlumno()
+    {
+        Alumno alumno = new Alumno();
+
+        Console.Write("DNI: ");
+        alumno.DNI = Console.ReadLine();
+
+        foreach (Alumno a in alumnos)
+        {
+            if (a.DNI == alumno.DNI)
+            {
+                Console.WriteLine(
+                    "Ya existe un alumno con ese DNI."
+                );
+                return;
+            }
+        }
+
+        Console.Write("Apellidos: ");
+        alumno.Apellidos = Console.ReadLine();
+
+        Console.Write("Nombre: ");
+        alumno.Nombre = Console.ReadLine();
+
+        Console.Write("Nota: ");
+        alumno.Nota =
+            double.Parse(Console.ReadLine());
+
+        alumno.ActualizarCalificacion();
+
+        alumnos.Add(alumno);
+
+        Console.WriteLine(
+            "Alumno registrado correctamente."
+        );
+    }
+
+    static void MostrarAlumnos()
+    {
+        foreach (Alumno a in alumnos)
+        {
+            Console.WriteLine(
+                a.DNI + " | " +
+                a.Apellidos + " | " +
+                a.Nombre + " | " +
+                a.Nota + " | " +
+                a.Calificacion
+            );
+        }
+    }
+
+    static void ConsultarAlumno()
+    {
+        Console.Write("Ingrese DNI: ");
+        string dni = Console.ReadLine();
+
+        foreach (Alumno a in alumnos)
+        {
+            if (a.DNI == dni)
+            {
+                Console.WriteLine(
+                    "Nombre: " + a.Nombre
+                );
+                Console.WriteLine(
+                    "Nota: " + a.Nota
+                );
+                Console.WriteLine(
+                    "Calificación: " +
+                    a.Calificacion
+                );
+                return;
+            }
+        }
+
+        Console.WriteLine("Alumno no encontrado.");
+    }
+
+    static void ModificarNota()
+    {
+        Console.Write("Ingrese DNI: ");
+        string dni = Console.ReadLine();
+
+        foreach (Alumno a in alumnos)
+        {
+            if (a.DNI == dni)
+            {
+                Console.Write("Nueva nota: ");
+                a.Nota =
+                    double.Parse(Console.ReadLine());
+
+                a.ActualizarCalificacion();
+
+                Console.WriteLine(
+                    "Nota actualizada."
+                );
+                return;
+            }
+        }
+
+        Console.WriteLine("Alumno no encontrado.");
+    }
+
+    static void EliminarAlumno()
+    {
+        Console.Write("Ingrese DNI: ");
+        string dni = Console.ReadLine();
+
+        for (int i = 0; i < alumnos.Count; i++)
+        {
+            if (alumnos[i].DNI == dni)
+            {
+                alumnos.RemoveAt(i);
+
+                Console.WriteLine(
+                    "Alumno eliminado."
+                );
+                return;
+            }
+        }
+
+        Console.WriteLine("Alumno no encontrado.");
+    }
+
+    static void MostrarSuspensos()
+    {
+        foreach (Alumno a in alumnos)
+        {
+            if (a.Nota < 5)
+            {
+                Console.WriteLine(
+                    a.Nombre + " - " +
+                    a.Nota
+                );
+            }
+        }
+    }
+
+    static void MostrarAprobados()
+    {
+        foreach (Alumno a in alumnos)
+        {
+            if (a.Nota >= 5)
+            {
+                Console.WriteLine(
+                    a.Nombre + " - " +
+                    a.Nota
+                );
+            }
+        }
+    }
+
+    static void MostrarMH()
+    {
+        foreach (Alumno a in alumnos)
+        {
+            if (a.Nota == 10)
+            {
+                Console.WriteLine(
+                    a.Nombre + " - MH"
+                );
+            }
+        }
+    }
+}
+</pre>
+
+      <h2>Conceptos Aplicados</h2>
+
+      <ul>
+        <li>Clases y objetos.</li>
+        <li>Propiedades.</li>
+        <li>Métodos.</li>
+        <li>Listas de objetos.</li>
+        <li>Condicionales if.</li>
+        <li>Validación de datos.</li>
+        <li>Búsquedas y consultas.</li>
+        <li>Programación Orientada a Objetos.</li>
+      </ul>
+
+      <h2>Análisis de Resultados</h2>
+
+      <p>
+        La utilización de clases permite representar cada alumno como un objeto
+        independiente con sus propios atributos. El cálculo automático de la
+        calificación garantiza consistencia en los resultados y facilita la
+        gestión académica de forma organizada y eficiente.
+      </p>
+
+      <h2>Ventajas de la Solución</h2>
+
+      <ul>
+        <li>Organización clara de la información.</li>
+        <li>Fácil mantenimiento del código.</li>
+        <li>Reutilización de métodos.</li>
+        <li>Automatización del cálculo de calificaciones.</li>
+        <li>Escalabilidad para agregar nuevas funciones.</li>
+      </ul>
+
+      <h2>Conclusiones</h2>
+
+      <div class="conclusiones-lista">
+        <ul>
+          <li>
+            Se aplicaron los principios fundamentales de la Programación
+            Orientada a Objetos mediante la creación de clases y objetos.
+          </li>
+          <li>
+            Se implementó un sistema capaz de gestionar información académica de
+            manera organizada.
+          </li>
+          <li>
+            El cálculo automático de calificaciones permitió reducir errores y
+            mejorar la eficiencia del sistema.
+          </li>
+          <li>
+            Se reforzó el uso de estructuras condicionales y operaciones de
+            búsqueda y modificación de datos.
+          </li>
+          <li>
+            El desarrollo de este proyecto fortaleció las habilidades de
+            análisis, diseño y resolución de problemas mediante programación.
+          </li>
+        </ul>
+      </div>
+
+      <h2>Reflexión</h2>
+
+      <p>
+        Este ejercicio permitió comprender cómo los conceptos de Programación
+        Orientada a Objetos pueden aplicarse en situaciones reales de gestión de
+        información. Además, se evidenció la importancia de diseñar sistemas
+        organizados y escalables que faciliten el manejo de datos y contribuyan
+        a la toma de decisiones de manera eficiente y confiable.
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividad 1 - Electrónica</title>
+    <link rel="icon" type="image/x-icon" href="helmet_2823525.png" />
+
+    <style>
+      body {
+        background-color: #1e1e26;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 40px 0;
+        color: #e0e0e0;
+      }
+
+      .main-container {
+        background-color: #2a2a35;
+        padding: 40px;
+        border-radius: 20px;
+        width: 90%;
+        max-width: 700px;
+        box-shadow:
+          10px 10px 20px #15151a,
+          -5px -5px 15px #3f3f4f;
+        border: 1px solid #333;
+      }
+
+      /* Estilo para los botones de navegación superior */
+      .nav-buttons {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 30px;
+      }
+
+      .btn-nav {
+        text-decoration: none;
+        color: #a0a0a0;
+        background: #2a2a35;
+        padding: 8px 15px;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        border: 1px solid #444;
+        transition: all 0.3s ease;
+        box-shadow:
+          3px 3px 6px #15151a,
+          -2px -2px 5px #3f3f4f;
+      }
+
+      .btn-nav:hover {
+        color: #00d4ff;
+        border-color: #00d4ff;
+        transform: translateY(-2px);
+      }
+
+      h1 {
+        color: #00d4ff;
+        text-transform: uppercase;
+        text-align: center;
+        border-bottom: 2px solid #00d4ff;
+        padding-bottom: 10px;
+        margin-top: 0;
+      }
+
+      h2 {
+        color: #00b4d8;
+        font-size: 1.3rem;
+        margin-top: 25px;
+        display: flex;
+        align-items: center;
+      }
+
+      h2::before {
+        content: "▹";
+        margin-right: 10px;
+        color: #ff9f1c;
+      }
+
+      p,
+      li {
+        line-height: 1.6;
+        color: #b0b0b0;
+      }
+      ul {
+        list-style-type: square;
+        padding-left: 20px;
+      }
+
+      .btn-link {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        color: #ffffff;
+        background: linear-gradient(145deg, #00b4d8, #0077b6);
+        padding: 15px;
+        border-radius: 12px;
+        font-weight: bold;
+        margin-top: 30px;
+        transition: all 0.3s ease;
+        box-shadow: 4px 4px 8px #1a1a21;
+      }
+
+      .btn-link:hover {
+        transform: scale(1.02);
+        background: linear-gradient(145deg, #00d4ff, #0096c7);
+        box-shadow: 0px 0px 15px rgba(0, 212, 255, 0.5);
+      }
+
+      .highlight {
+        color: #ff9f1c;
+        font-weight: bold;
+      }
+
+      .img-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+        box-shadow: 0px 0px 15px rgba(0, 212, 255, 0.5);
+      }
+      .conclusiones-lista ul li {
+        margin-bottom: 15px;
+        padding-left: 10px;
+        border-left: 2px solid #ff9f1c;
+      }
+      pre {
+        background-color: #1e1e26;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #00d4ff;
+        font-family: "Consolas", monospace;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <nav class="nav-buttons">
+        <a href="../../index.html" class="btn-nav">🏠 Home</a>
+        <a href="../deberes.html" class="btn-nav">📚 Mis Deberes</a>
+      </nav>
+
+      <h1>Ejercicio 2</h1>
+
+      <h2>Objetivos</h2>
+      <p>
+        Desarrollar un programa en C# que permita calcular las raíces de una
+        ecuación de segundo grado utilizando el método
+        <span class="highlight">Math.Sqrt()</span>
+        del espacio de nombres System. Mediante este ejercicio se busca
+        comprender los conceptos fundamentales de las ecuaciones cuadráticas, el
+        uso de operaciones matemáticas avanzadas en programación y la aplicación
+        de estos conocimientos para resolver problemas de manera lógica y
+        responsable, fortaleciendo además el compromiso ético en el desarrollo
+        de soluciones informáticas.
+      </p>
+
+      <h2>Descripción del Problema</h2>
+      <p>Una ecuación de segundo grado tiene la forma:</p>
+
+      <pre>
+ax² + bx + c = 0
+</pre
+      >
+
+      <p>
+        Donde <span class="highlight">a</span>,
+        <span class="highlight">b</span> y <span class="highlight">c</span> son
+        coeficientes proporcionados por el usuario. Para encontrar las raíces se
+        utiliza la fórmula general:
+      </p>
+
+      <pre>
+x1 = (-b + √(b² - 4ac)) / (2a)
+
+x2 = (-b - √(b² - 4ac)) / (2a)
+</pre
+      >
+
+      <p>El valor dentro de la raíz cuadrada se denomina discriminante:</p>
+
+      <pre>
+D = b² - 4ac
+</pre
+      >
+
+      <p>
+        Si D es mayor o igual a cero, existen raíces reales. En caso contrario,
+        las raíces son números complejos y no podrán calcularse mediante
+        Math.Sqrt().
+      </p>
+
+      <h2>Algoritmo</h2>
+
+      <ul>
+        <li>Inicio.</li>
+        <li>Solicitar los coeficientes a, b y c.</li>
+        <li>Calcular el discriminante D = b² - 4ac.</li>
+        <li>Verificar si D es mayor o igual a cero.</li>
+        <li>
+          Si es verdadero, calcular las dos raíces utilizando la fórmula
+          general.
+        </li>
+        <li>Mostrar las raíces obtenidas.</li>
+        <li>Si D es negativo, informar que no existen raíces reales.</li>
+        <li>Fin.</li>
+      </ul>
+
+      <h2>Código en C#</h2>
+
+      <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double a, b, c;
+        double discriminante, x1, x2;
+
+        Console.Write("Ingrese el valor de a: ");
+        a = double.Parse(Console.ReadLine());
+
+        Console.Write("Ingrese el valor de b: ");
+        b = double.Parse(Console.ReadLine());
+
+        Console.Write("Ingrese el valor de c: ");
+        c = double.Parse(Console.ReadLine());
+
+        discriminante = (b * b) - (4 * a * c);
+
+        if (discriminante >= 0)
+        {
+            x1 = (-b + Math.Sqrt(discriminante)) / (2 * a);
+            x2 = (-b - Math.Sqrt(discriminante)) / (2 * a);
+
+            Console.WriteLine("\nRaíz 1: " + x1);
+            Console.WriteLine("Raíz 2: " + x2);
+        }
+        else
+        {
+            Console.WriteLine(
+                "\nLa ecuación no posee raíces reales."
+            );
+        }
+    }
+}
+</pre
+      >
+
+      <h2>Ejemplo de Ejecución</h2>
+
+      <ul>
+        <li>a = 1</li>
+        <li>b = -5</li>
+        <li>c = 6</li>
+        <li>Discriminante = 1</li>
+        <li><span class="highlight">Raíz 1:</span> 3</li>
+        <li><span class="highlight">Raíz 2:</span> 2</li>
+      </ul>
+
+      <h2>Análisis de Resultados</h2>
+
+      <p>
+        En el ejemplo anterior se obtuvo un discriminante positivo, lo que
+        indica que la ecuación posee dos raíces reales diferentes. El método
+        <span class="highlight">Math.Sqrt()</span> permitió calcular la raíz
+        cuadrada del discriminante y obtener los valores que satisfacen la
+        ecuación cuadrática.
+      </p>
+
+      <h2>Conclusiones</h2>
+
+      <div class="conclusiones-lista">
+        <ul>
+          <li>
+            Se comprendió la estructura de una ecuación de segundo grado y la
+            aplicación de la fórmula general para resolverla.
+          </li>
+          <li>
+            Se utilizó correctamente el método
+            <span class="highlight">Math.Sqrt()</span> para calcular raíces
+            cuadradas dentro de un programa en C#.
+          </li>
+          <li>
+            Se reforzó el uso de variables, operadores matemáticos, estructuras
+            condicionales y tipos de datos numéricos.
+          </li>
+          <li>
+            La programación permite automatizar cálculos matemáticos complejos
+            de forma rápida y precisa, contribuyendo a la resolución eficiente
+            de problemas académicos y profesionales.
+          </li>
+          <li>
+            El desarrollo de programas correctos y confiables fomenta el
+            compromiso ético del programador al generar resultados precisos y
+            útiles para los usuarios.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

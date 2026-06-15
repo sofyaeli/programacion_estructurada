@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diccionario de Etiquetas HTML</title>
+    <link rel="icon" type="image/x-icon" href="helmet_2823525.png" />
+
+    <style>
+      :root {
+        --primary-blue: #00d4ff;
+        --secondary-blue: #00b4d8;
+        --accent-orange: #ff9f1c;
+        --bg-dark: #1e1e26;
+        --card-bg: #2a2a35;
+        --text-gray: #b0b0b0;
+        --border-color: #3d3d4d;
+      }
+
+      body {
+        background-color: var(--bg-dark);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 40px 20px;
+        color: #e0e0e0;
+      }
+
+      .main-container {
+        background-color: var(--card-bg);
+        padding: 40px;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 900px;
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+        border: 1px solid #333;
+      }
+
+      /* Navegación superior */
+      .nav-buttons {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 30px;
+      }
+
+      .btn-nav {
+        text-decoration: none;
+        color: #a0a0a0;
+        background: #23232e;
+        padding: 10px 18px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        border: 1px solid var(--border-color);
+        transition: 0.3s;
+      }
+
+      .btn-nav:hover {
+        color: var(--primary-blue);
+        border-color: var(--primary-blue);
+        transform: translateY(-2px);
+      }
+
+      h1 {
+        color: var(--primary-blue);
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 2px;
+        border-bottom: 2px solid var(--primary-blue);
+        padding-bottom: 15px;
+        margin-bottom: 35px;
+      }
+
+      /* Estilo de la Tabla */
+      .table-container {
+        overflow-x: auto; /* Para que sea responsive en móviles */
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+      }
+
+      th {
+        background-color: #1a1a21;
+        color: var(--accent-orange);
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        padding: 15px;
+        text-align: left;
+        border-bottom: 2px solid var(--border-color);
+      }
+
+      td {
+        padding: 15px;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--text-gray);
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      /* Resaltado de etiquetas */
+      .tag-name {
+        font-family: "Courier New", Courier, monospace;
+        color: var(--primary-blue);
+        font-weight: bold;
+        background: rgba(0, 212, 255, 0.1);
+        padding: 4px 8px;
+        border-radius: 4px;
+      }
+
+      tr:hover {
+        background-color: rgba(255, 255, 255, 0.03);
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      .highlight {
+        color: var(--accent-orange);
+      }
+      pre {
+        background-color: #1e1e26;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #00d4ff;
+        font-family: "Consolas", monospace;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <nav class="nav-buttons">
+        <a href="../../index.html" class="btn-nav">🏠 Inicio</a>
+        <a href="../unidad_2/unidad_2.html" class="btn-nav">📚 Mis Deberes</a>
+      </nav>
+      <h1>Trabajo Autónomo No. 03</h1>
+
+      <h2>Objetivos</h2>
+      <p>
+        Desarrollar un programa en C# que permita determinar si un número entero
+        ingresado por el usuario es múltiplo de 5 utilizando el operador módulo
+        (%). Mediante esta actividad se busca comprender el uso de operadores
+        aritméticos y estructuras condicionales como
+        <span class="highlight">if</span>, fortaleciendo la capacidad de
+        análisis lógico para la resolución de problemas y promoviendo el
+        compromiso ético en el desarrollo de soluciones informáticas.
+      </p>
+
+      <h2>Descripción del Problema</h2>
+      <p>
+        Se requiere elaborar un programa que solicite al usuario un número
+        entero y determine si dicho número es múltiplo de 5. Para ello se
+        utilizará el operador módulo (%), que permite obtener el residuo de una
+        división.
+      </p>
+
+      <p>
+        Un número es múltiplo de 5 cuando el residuo de dividirlo para 5 es
+        igual a cero.
+      </p>
+
+      <h2>Fundamento Teórico</h2>
+
+      <p>
+        El operador <span class="highlight">%</span> devuelve el residuo de una
+        división entre dos números enteros.
+      </p>
+
+      <pre>
+15 % 5 = 0
+17 % 5 = 2
+20 % 5 = 0
+</pre
+      >
+
+      <p>
+        Si el resultado de <span class="highlight">numero % 5</span> es igual a
+        cero, significa que el número es múltiplo de 5.
+      </p>
+
+      <h2>Algoritmo</h2>
+
+      <ul>
+        <li>Inicio.</li>
+        <li>Solicitar al usuario un número entero.</li>
+        <li>Calcular el residuo utilizando el operador %.</li>
+        <li>Verificar si el residuo es igual a cero.</li>
+        <li>Si es verdadero, indicar que el número es múltiplo de 5.</li>
+        <li>Si es falso, indicar que el número no es múltiplo de 5.</li>
+        <li>Fin.</li>
+      </ul>
+
+      <h2>Código en C#</h2>
+
+      <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int numero;
+
+        Console.Write("Ingrese un número entero: ");
+        numero = int.Parse(Console.ReadLine());
+
+        if (numero % 5 == 0)
+        {
+            Console.WriteLine(
+                "El número es múltiplo de 5."
+            );
+        }
+        else
+        {
+            Console.WriteLine(
+                "El número no es múltiplo de 5."
+            );
+        }
+    }
+}
+</pre
+      >
+
+      <h2>Ejemplo de Ejecución</h2>
+
+      <ul>
+        <li>Número ingresado: 25</li>
+        <li>Operación realizada: 25 % 5 = 0</li>
+        <li>
+          <span class="highlight">Resultado:</span> El número es múltiplo de 5.
+        </li>
+      </ul>
+
+      <h2>Análisis de Resultados</h2>
+
+      <p>
+        Cuando el usuario ingresa el número 25, el programa realiza la operación
+        25 % 5, obteniendo como resultado 0. Debido a que el residuo es igual a
+        cero, la condición del <span class="highlight">if</span> se cumple y el
+        sistema informa que el número es múltiplo de 5.
+      </p>
+
+      <h2>Conceptos Aplicados</h2>
+
+      <ul>
+        <li>Variables y tipos de datos enteros.</li>
+        <li>Entrada y salida de datos.</li>
+        <li>Operador módulo (%).</li>
+        <li>Estructura condicional if.</li>
+        <li>Evaluación de expresiones lógicas.</li>
+      </ul>
+
+      <h2>Conclusiones</h2>
+
+      <div class="conclusiones-lista">
+        <ul>
+          <li>
+            Se comprendió el funcionamiento del operador módulo (%) para obtener
+            el residuo de una división.
+          </li>
+          <li>
+            Se aplicó correctamente la estructura condicional
+            <span class="highlight">if</span> para tomar decisiones dentro del
+            programa.
+          </li>
+          <li>
+            Se reforzaron conocimientos relacionados con variables, operadores
+            aritméticos y expresiones lógicas.
+          </li>
+          <li>
+            La programación permite automatizar procesos matemáticos simples de
+            manera rápida y precisa.
+          </li>
+          <li>
+            El desarrollo de programas correctos fomenta el compromiso ético al
+            proporcionar resultados confiables y útiles para los usuarios.
+          </li>
+        </ul>
+      </div>
+
+      <h2>Reflexión</h2>
+
+      <p>
+        Este ejercicio permitió comprender cómo una operación matemática
+        sencilla puede ser utilizada dentro de un programa para resolver
+        problemas de forma automática. Además, se evidenció la importancia de
+        las estructuras condicionales en la toma de decisiones, siendo una
+        herramienta fundamental para el desarrollo de aplicaciones más complejas
+        en el futuro.
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividad 1 - Electrónica</title>
+    <link rel="icon" type="image/x-icon" href="helmet_2823525.png" />
+
+    <style>
+      body {
+        background-color: #1e1e26;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 40px 0;
+        color: #e0e0e0;
+      }
+
+      .main-container {
+        background-color: #2a2a35;
+        padding: 40px;
+        border-radius: 20px;
+        width: 90%;
+        max-width: 700px;
+        box-shadow:
+          10px 10px 20px #15151a,
+          -5px -5px 15px #3f3f4f;
+        border: 1px solid #333;
+      }
+
+      /* Estilo para los botones de navegación superior */
+      .nav-buttons {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 30px;
+      }
+
+      .btn-nav {
+        text-decoration: none;
+        color: #a0a0a0;
+        background: #2a2a35;
+        padding: 8px 15px;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        border: 1px solid #444;
+        transition: all 0.3s ease;
+        box-shadow:
+          3px 3px 6px #15151a,
+          -2px -2px 5px #3f3f4f;
+      }
+
+      .btn-nav:hover {
+        color: #00d4ff;
+        border-color: #00d4ff;
+        transform: translateY(-2px);
+      }
+
+      h1 {
+        color: #00d4ff;
+        text-transform: uppercase;
+        text-align: center;
+        border-bottom: 2px solid #00d4ff;
+        padding-bottom: 10px;
+        margin-top: 0;
+      }
+
+      h2 {
+        color: #00b4d8;
+        font-size: 1.3rem;
+        margin-top: 25px;
+        display: flex;
+        align-items: center;
+      }
+
+      h2::before {
+        content: "▹";
+        margin-right: 10px;
+        color: #ff9f1c;
+      }
+
+      p,
+      li {
+        line-height: 1.6;
+        color: #b0b0b0;
+      }
+      ul {
+        list-style-type: square;
+        padding-left: 20px;
+      }
+
+      .btn-link {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        color: #ffffff;
+        background: linear-gradient(145deg, #00b4d8, #0077b6);
+        padding: 15px;
+        border-radius: 12px;
+        font-weight: bold;
+        margin-top: 30px;
+        transition: all 0.3s ease;
+        box-shadow: 4px 4px 8px #1a1a21;
+      }
+
+      .btn-link:hover {
+        transform: scale(1.02);
+        background: linear-gradient(145deg, #00d4ff, #0096c7);
+        box-shadow: 0px 0px 15px rgba(0, 212, 255, 0.5);
+      }
+
+      .highlight {
+        color: #ff9f1c;
+        font-weight: bold;
+      }
+
+      .img-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+        box-shadow: 0px 0px 15px rgba(0, 212, 255, 0.5);
+      }
+      .conclusiones-lista ul li {
+        margin-bottom: 15px;
+        padding-left: 10px;
+        border-left: 2px solid #ff9f1c; /* Una línea naranja a la izquierda para resaltar */
+      }
+
+      pre {
+        background-color: #1e1e26;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #00d4ff;
+        font-family: "Consolas", monospace;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <nav class="nav-buttons">
+        <a href="../../index.html" class="btn-nav">🏠 Home</a>
+        <a href="../deberes.html" class="btn-nav">📚 Mis Deberes</a>
+      </nav>
+
+      <h1>Ejercicio 1</h1>
+
+      <h2>Objetivos</h2>
+      <p>
+        Desarrollar un programa en C# que solicite al usuario tres valores
+        enteros, calcule su suma y su media aritmética. Mediante este ejercicio
+        se busca comprender el uso de variables, entrada de datos, operadores
+        aritméticos y salida de información, fortaleciendo el pensamiento lógico
+        y la capacidad para resolver problemas cotidianos mediante la
+        programación.
+      </p>
+
+      <h2>Descripción del Problema</h2>
+      <p>
+        Se requiere elaborar un programa que permita ingresar tres números
+        enteros proporcionados por el usuario. Posteriormente, el programa
+        deberá calcular la suma de los tres valores y determinar su media
+        aritmética (promedio), mostrando los resultados obtenidos en pantalla.
+      </p>
+
+      <h2>Algoritmo</h2>
+      <ul>
+        <li>Inicio.</li>
+        <li>Solicitar al usuario el primer número entero.</li>
+        <li>Solicitar al usuario el segundo número entero.</li>
+        <li>Solicitar al usuario el tercer número entero.</li>
+        <li>Calcular la suma de los tres números.</li>
+        <li>Calcular la media dividiendo la suma para tres.</li>
+        <li>Mostrar la suma obtenida.</li>
+        <li>Mostrar la media obtenida.</li>
+        <li>Fin.</li>
+      </ul>
+
+      <h2>Código en C#</h2>
+
+      <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int numero1, numero2, numero3;
+        int suma;
+        double media;
+
+        Console.Write("Ingrese el primer número: ");
+        numero1 = int.Parse(Console.ReadLine());
+
+        Console.Write("Ingrese el segundo número: ");
+        numero2 = int.Parse(Console.ReadLine());
+
+        Console.Write("Ingrese el tercer número: ");
+        numero3 = int.Parse(Console.ReadLine());
+
+        suma = numero1 + numero2 + numero3;
+        media = suma / 3.0;
+
+        Console.WriteLine("\nLa suma es: " + suma);
+        Console.WriteLine("La media es: " + media);
+    }
+}
+</pre
+      >
+
+      <h2>Ejemplo de Ejecución</h2>
+
+      <ul>
+        <li>Primer número: 10</li>
+        <li>Segundo número: 20</li>
+        <li>Tercer número: 30</li>
+        <li><span class="highlight">Suma:</span> 60</li>
+        <li><span class="highlight">Media:</span> 20</li>
+      </ul>
+
+      <h2>Conclusiones</h2>
+
+      <div class="conclusiones-lista">
+        <ul>
+          <li>
+            Se aplicaron conceptos fundamentales de programación como variables,
+            entrada y salida de datos.
+          </li>
+          <li>
+            Se utilizó el operador de suma para obtener el total de los tres
+            números ingresados.
+          </li>
+          <li>
+            Se calculó la media aritmética utilizando operaciones matemáticas
+            básicas.
+          </li>
+          <li>
+            Este ejercicio demuestra cómo la programación puede emplearse para
+            resolver problemas sencillos de la vida cotidiana de manera rápida y
+            eficiente.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
